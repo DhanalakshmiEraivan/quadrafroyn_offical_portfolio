@@ -3702,3 +3702,101 @@ html{scroll-behavior:smooth;scroll-padding-top:88px}body{overflow-x:clip}img,vid
 @keyframes qf-intro-lift{to{transform:translateY(-100%);visibility:hidden}}
 @media(max-width:560px){.qf-intro-word{font-size:10vw;letter-spacing:-.07em}.qf-intro-dots{gap:8px}}
 @media(prefers-reduced-motion:reduce){.qf-intro-word,.qf-intro-dots i{animation:none!important}.qf-intro-leaving{animation:none!important;opacity:0;transition:opacity .12s}.qf-intro-leaving .qf-intro-word{opacity:1;transition:none}}
+/* RESTORED QUESTION MARK HELP BUTTON */
+
+.qf-floating-tools {
+  position: fixed;
+  right: 20px;
+  bottom: 100px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.qf-floating-tools button {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #ffffff40;
+  border-radius: 50%;
+  background: #111;
+  color: #b5f536;
+  font-size: 23px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 25px #0003;
+  transition: transform .25s, background .25s;
+}
+
+.qf-floating-tools button:hover {
+  transform: translateY(-4px);
+  background: #2b3921;
+}
+
+.qf-shortcuts {
+  position: fixed;
+  z-index: 1000;
+  right: 80px;
+  bottom: 100px;
+  width: min(320px, calc(100vw - 100px));
+  background: #121912;
+  color: #fff;
+  border: 1px solid #b5f53665;
+  padding: 26px;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px #0005;
+  animation: qfPanelIn .35s both;
+}
+
+.qf-shortcuts > button {
+  float: right;
+  background: transparent;
+  border: 0;
+  color: #b5f536;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.qf-shortcuts h3 {
+  font-size: 24px;
+  margin: 0 0 16px;
+}
+
+.qf-shortcuts p {
+  font-size: 13px;
+  color: #d3ddce;
+  line-height: 1.7;
+}
+
+.qf-shortcuts kbd {
+  display: inline-block;
+  background: #b5f536;
+  color: #111;
+  padding: 4px 9px;
+  border-radius: 5px;
+  margin-right: 8px;
+}
+
+@keyframes qfPanelIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .qf-floating-tools {
+    right: 12px;
+    bottom: 85px;
+  }
+
+  .qf-shortcuts {
+    right: 68px;
+    bottom: 85px;
+    width: min(300px, calc(100vw - 90px));
+  }
+}
