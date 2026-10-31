@@ -206,8 +206,8 @@ export function Footer() {
   const groups = [
     {title:'Services',links:[['Mobile app development','/services/mobile-app-development'],['Web development','/services/web-development'],['Software development','/services/software-development'],['Consulting & support','/services/consulting-and-support'],['Cloud migration','/services/cloud-migration'],['Open source customization','/services/open-source-customization']]},
     {title:'Business solutions',links:[['Business management','/business-management'],['Business intelligence','/business-intelligence'],['Workforce management','/workforce-management'],['Data orchestration','/data-orchestration']]},
-    {title:'Explore',links:[['Our services','/services'],['Our work','/work'],['Our process','/process'],['Products','/products'],['About us','/about-us']]},
-    {title:'Connect',links:[['Contact us','/contact'],['Get a quote','/get-a-quote'],['Documentation','/documentation'],['Support','/support'],['Careers','/careers']]},
+    {title:'Explore',links:[['Our services','/services'],['Our work','/work'],['Careers','/careers'],['Our process','/process'],['Products','/products'],['About us','/about-us'],['Contact us','/contact']]},
+    {title:'Others',links:[['Agentic Workflows','/agentic-workflows'],['SLM Fine Tuning','/slm-fine-tuning'],['Data Ontology','/data-ontology'],['AI Governance','/ai-governance'],['Inferencing','/inferencing'],['Knowledge Graphs','/knowledge-graphs'],['Enterprise AI','/enterprise-ai'],['Cloud & Sovereign','/cloud-and-sovereign'],['Agent Evaluation','/agent-evaluation']]},
   ];
   return <footer className="site-footer">
     <div className="footer-link-grid footer-v26-grid">
