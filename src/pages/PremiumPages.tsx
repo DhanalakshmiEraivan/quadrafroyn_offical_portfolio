@@ -115,9 +115,143 @@ function CloudMigrationExperience(){
  const journey=[{name:'Discover',verb:'Understand what exists.',desc:'Map workloads, dependencies, data, risks and business priorities before choosing a migration path.',color:'blue',tag:'ASSESS / BASELINE'},{name:'Strategize',verb:'Design the route forward.',desc:'Choose an appropriate target architecture, sequence workloads and agree on validation and rollback plans.',color:'violet',tag:'PLAN / ARCHITECT'},{name:'Migrate',verb:'Move with control.',desc:'Move applications and data in considered waves, with testing, monitoring and stakeholder communication.',color:'cyan',tag:'MOVE / VALIDATE'},{name:'Optimize',verb:'Make the cloud work harder.',desc:'Review reliability, cost, performance and operations after workloads are running in their new environment.',color:'coral',tag:'OBSERVE / IMPROVE'}];
  const projects=[{n:'01',title:'Legacy-to-cloud foundation',type:'INFRASTRUCTURE MODERNIZATION',desc:'A demonstration architecture showing how a legacy application environment can be decomposed into clearer application, data and monitoring layers.',challenge:'Tightly coupled workloads and limited operational visibility.',approach:'Assess dependencies, plan phased movement and define rollback checkpoints.',tech:['Cloud architecture','Networking','Observability'],kind:'foundation'},{n:'02',title:'Connected application platform',type:'APPLICATION MIGRATION',desc:'An illustrative concept for moving application services into a more flexible environment with explicit service boundaries.',challenge:'Application components that need a safer, more deliberate migration path.',approach:'Map dependencies, validate each release wave and establish environment parity.',tech:['Containers','CI/CD','API integration'],kind:'platform'},{n:'03',title:'Data & insight pipeline',type:'DATA PLATFORM CONCEPT',desc:'A sample data-flow concept connecting ingestion, storage, processing and business-facing insight layers.',challenge:'Data flows that are difficult to observe and operate consistently.',approach:'Clarify data movement, access controls, monitoring and recovery expectations.',tech:['Data services','Access control','Monitoring'],kind:'data'}];
  return <main className="cloud-experience">
-  <section className="cloud-hero"><div className="cloud-hero-copy"><span className="cloud-eyebrow"><i/> QUADRAFROYN / CLOUD MIGRATION</span><h1>Move beyond infrastructure.<br/><em>Into possibility.</em></h1><p>Transform your digital infrastructure with seamless, secure, and scalable cloud migration solutions built for what's next.</p><div className="cloud-actions"><Link to="/contact" className="cloud-primary">Start your migration <ArrowUpRight size={18}/></Link><a className="cloud-secondary" href="#cloud-work">Explore our work <span>↓</span></a></div><div className="cloud-hero-foot"><span>ASSESS WITH CLARITY</span><i/><span>MIGRATE WITH CONTROL</span><i/><span>OPTIMIZE CONTINUOUSLY</span></div></div>
-   <div className="cloud-hero-art" aria-label="Illustrative cloud migration architecture"><div className="cloud-orbit cloud-orbit-a"/><div className="cloud-orbit cloud-orbit-b"/><svg className="cloud-connectors" viewBox="0 0 600 500" aria-hidden="true"><path d="M95 250 C155 250 160 155 240 155 S335 250 405 250 S480 150 530 150"/><path d="M95 250 C160 250 170 355 250 355 S345 250 405 250 S465 350 530 350"/><path d="M240 155 L240 355 M405 250 L405 105"/></svg><div className="cloud-server-stack"><span>ON-PREMISE</span><div className="cloud-server"><i/><b/><b/><b/></div><div className="cloud-server"><i/><b/><b/><b/></div><div className="cloud-server"><i/><b/><b/><b/></div><small>LEGACY WORKLOADS</small></div><div className="cloud-core"><div className="cloud-core-cloud"><i/><b/><span/></div><span className="cloud-core-label">CLOUD CORE</span><div className="cloud-core-ring"/></div><div className="cloud-node cloud-node-a"><i>↗</i><span>APP SERVICES</span><b>Container ready</b></div><div className="cloud-node cloud-node-b"><i>◈</i><span>DATA LAYER</span><b>Managed storage</b></div><div className="cloud-node cloud-node-c"><i>⌁</i><span>OBSERVABILITY</span><b>Signals connected</b></div><div className="cloud-art-caption"><span>ILLUSTRATIVE ARCHITECTURE</span><b>01 — CONNECT. MIGRATE. EVOLVE.</b></div><div className="cloud-float-pill cloud-pill-one"><i/> Dependency map <b>Ready to review</b></div><div className="cloud-float-pill cloud-pill-two"><i/> Migration wave <b>Phase 01 / plan</b></div></div>
-  </section>
+  <section className="cloud-hero-v2">
+  <div className="cloud-v2-grid" aria-hidden="true" />
+  <div className="cloud-v2-glow cloud-v2-glow-one" />
+  <div className="cloud-v2-glow cloud-v2-glow-two" />
+
+  <div className="cloud-v2-content">
+    <div className="cloud-v2-eyebrow">
+      <span className="cloud-v2-live-dot" />
+      QUADRAFROYN / CLOUD ENGINEERING
+      <span className="cloud-v2-eyebrow-line" />
+      <span>01 — 04</span>
+    </div>
+
+    <h1>
+      Your next era
+      <br />
+      starts <span>in the cloud.</span>
+    </h1>
+
+    <p className="cloud-v2-description">
+      Leave infrastructure limitations behind. We architect
+      intelligent cloud environments that make your business
+      more connected, resilient, secure and ready to scale.
+    </p>
+
+    <div className="cloud-v2-actions">
+      <Link to="/contact" className="cloud-v2-primary">
+        <span>Start your migration</span>
+        <ArrowUpRight size={19} />
+      </Link>
+
+      <a href="#cloud-work" className="cloud-v2-secondary">
+        Discover what we build
+        <span>↓</span>
+      </a>
+    </div>
+
+    <div className="cloud-v2-proof">
+      <div>
+        <span className="cloud-v2-proof-icon">01</span>
+        <span>STRATEGIC PLANNING</span>
+      </div>
+      <div>
+        <span className="cloud-v2-proof-icon">02</span>
+        <span>SECURE MIGRATION</span>
+      </div>
+      <div>
+        <span className="cloud-v2-proof-icon">03</span>
+        <span>CONTINUOUS GROWTH</span>
+      </div>
+    </div>
+  </div>
+
+  <div className="cloud-v2-visual">
+    <div className="cloud-v2-visual-top">
+      <span>QF / CLOUD ARCHITECTURE</span>
+      <span><i /> SYSTEM CONCEPT</span>
+    </div>
+
+    <div className="cloud-v2-orbit cloud-v2-orbit-one" />
+    <div className="cloud-v2-orbit cloud-v2-orbit-two" />
+    <div className="cloud-v2-orbit cloud-v2-orbit-three" />
+
+    <svg
+      className="cloud-v2-connections"
+      viewBox="0 0 600 540"
+      fill="none"
+      aria-hidden="true"
+    >
+      <path d="M100 165 C170 165 180 270 300 270 S420 165 500 165" />
+      <path d="M100 375 C180 375 180 270 300 270 S420 375 500 375" />
+      <path d="M300 80 V460" />
+      <path d="M100 165 L100 375" />
+      <path d="M500 165 L500 375" />
+    </svg>
+
+    <div className="cloud-v2-central">
+      <div className="cloud-v2-central-ring" />
+      <div className="cloud-v2-cloud-icon">
+        <span />
+        <span />
+        <span />
+      </div>
+      <strong>CLOUD CORE</strong>
+      <small>CONNECTED INFRASTRUCTURE</small>
+    </div>
+
+    <div className="cloud-v2-node cloud-v2-node-left">
+      <span className="cloud-v2-node-icon">01</span>
+      <div>
+        <small>EXISTING SYSTEMS</small>
+        <strong>Legacy workloads</strong>
+        <i><b /></i>
+      </div>
+    </div>
+
+    <div className="cloud-v2-node cloud-v2-node-right">
+      <span className="cloud-v2-node-icon">02</span>
+      <div>
+        <small>APPLICATION LAYER</small>
+        <strong>Cloud applications</strong>
+        <i><b /></i>
+      </div>
+    </div>
+
+    <div className="cloud-v2-node cloud-v2-node-bottom">
+      <span className="cloud-v2-node-icon">03</span>
+      <div>
+        <small>DATA & INTELLIGENCE</small>
+        <strong>Connected insights</strong>
+        <i><b /></i>
+      </div>
+    </div>
+
+    <div className="cloud-v2-floating cloud-v2-float-one">
+      <span />
+      MIGRATION STATUS
+      <strong>Architecture mapped</strong>
+    </div>
+
+    <div className="cloud-v2-floating cloud-v2-float-two">
+      <span />
+      SECURITY
+      <strong>Protection by design</strong>
+    </div>
+
+    <div className="cloud-v2-visual-bottom">
+      <span>DESIGN / MIGRATE / OPTIMIZE</span>
+      <span>QUADRAFROYN © 2026</span>
+    </div>
+  </div>
+
+  <div className="cloud-v2-bottom">
+    <span>ENGINEERING A BETTER DIGITAL FOUNDATION</span>
+    <span>SCROLL TO EXPLORE ↓</span>
+  </div>
+</section>
   <div className="cloud-ticker" aria-label="Migration principles"><div><span>SECURITY FIRST</span><i>✳</i><span>CONTROLLED MIGRATION</span><i>✳</i><span>RESILIENT ARCHITECTURE</span><i>✳</i><span>CONTINUOUS OPTIMIZATION</span><i>✳</i><span>SECURITY FIRST</span><i>✳</i><span>CONTROLLED MIGRATION</span></div></div>
   <section className="cloud-journey" data-cloud-reveal><div className="cloud-section-heading"><span className="cloud-eyebrow">01 / THE MIGRATION JOURNEY</span><h2>From where you are<br/><em>to what's possible.</em></h2><p>Migration is a journey of informed decisions—not a single move. Each stage creates a clearer foundation for the next.</p></div><div className="cloud-journey-map"><div className="cloud-journey-track"><span style={{width:`${stage*33.333}%`}}/></div><div className="cloud-journey-stages">{journey.map((item,i)=><button key={item.name} className={`cloud-stage cloud-${item.color} ${stage===i?'active':''}`} onClick={()=>setStage(i)} aria-pressed={stage===i}><span className="cloud-stage-num">0{i+1}</span><span className="cloud-stage-symbol" aria-hidden="true"><i/><b/><em/></span><strong>{item.name}</strong><small>{item.tag}</small></button>)}</div><div className={`cloud-journey-detail cloud-${journey[stage].color}`} key={stage}><span>STAGE / 0{stage+1}</span><div><h3>{journey[stage].verb}</h3><p>{journey[stage].desc}</p></div><b>{journey[stage].name.toUpperCase()} <ArrowUpRight size={17}/></b></div></div></section>
   <section className="cloud-work" id="cloud-work"><div className="cloud-work-heading" data-cloud-reveal><div><span className="cloud-eyebrow">02 / FEATURED CONCEPTS</span><h2>Real transformations.<br/><em>Thoughtfully planned.</em></h2></div><p>These illustrative architecture studies demonstrate migration thinking. They are concept work—not claimed client deployments or verified case studies.</p></div>{projects.map((project,i)=><article className={`cloud-project cloud-project-${project.kind}`} key={project.n} data-cloud-reveal><div className="cloud-project-art"><div className="cloud-project-head"><span>QF / CLOUD STUDY {project.n}</span><span>ILLUSTRATIVE CONCEPT</span></div>{project.kind==='foundation'?<div className="cloud-foundation-diagram"><div className="cloud-old-stack"><span>EXISTING ENVIRONMENT</span><i/><i/><i/><b>APPLICATIONS</b></div><div className="cloud-migration-arrow">→<small>PHASED MOVE</small></div><div className="cloud-new-stack"><span>TARGET CLOUD</span><div><i/><b>APP LAYER</b></div><div><i/><b>DATA LAYER</b></div><div><i/><b>MONITORING</b></div></div></div>:project.kind==='platform'?<div className="cloud-platform-diagram"><div className="cloud-platform-top"><span>APPLICATION MAP</span><b>ENVIRONMENT / TARGET</b></div><div className="cloud-platform-main"><div className="cloud-platform-sidebar"><i/><i/><i/><i/></div><div className="cloud-platform-content"><div className="cloud-platform-label">SERVICE BOUNDARIES</div><div className="cloud-service-grid"><i>WEB<br/>APP</i><i>API<br/>LAYER</i><i>WORKER<br/>JOBS</i></div><div className="cloud-platform-lines"><i/><i/><i/></div><div className="cloud-platform-status"><span><i/> VALIDATION CHECKS</span><b>DEPENDENCIES MAPPED</b></div></div></div></div>:<div className="cloud-data-diagram"><div className="cloud-data-head">DATA FLOW / CONCEPT <span>PIPELINE</span></div><div className="cloud-data-flow"><div><i>01</i><b>Ingest</b><small>Sources</small></div><span>→</span><div><i>02</i><b>Process</b><small>Rules</small></div><span>→</span><div><i>03</i><b>Store</b><small>Managed data</small></div><span>→</span><div><i>04</i><b>Observe</b><small>Insights</small></div></div><div className="cloud-data-wave">{[20,40,32,65,46,80,58,93,72,100,78,87,64,95,75,100,85].map((v,j)=><i key={j} style={{height:`${v}%`}}/>)}</div><div className="cloud-data-footer"><span>ACCESS CONTROL</span><span>MONITORING</span><span>RECOVERY PLAN</span></div></div>}<div className="cloud-art-bottom"><span>{project.type}</span><b>ARCHITECTURE / {project.n}</b></div></div><div className="cloud-project-copy"><span className="cloud-eyebrow">{project.n} / {project.type}</span><h3>{project.title}</h3><p>{project.desc}</p><div className="cloud-project-notes"><div><span>THE CHALLENGE</span><p>{project.challenge}</p></div><div><span>OUR APPROACH</span><p>{project.approach}</p></div></div><div className="cloud-project-tags">{project.tech.map(t=><span key={t}>{t}</span>)}</div><Link to="/contact">Discuss a similar migration <ArrowUpRight size={17}/></Link></div></article>)}<p className="cloud-disclaimer">No client names, measured outcomes or production migrations are implied by these concept visuals. Scope, platforms and outcomes depend on each engagement.</p></section>
