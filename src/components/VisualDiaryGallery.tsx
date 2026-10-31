@@ -13,9 +13,25 @@ export default function VisualDiaryGallery() {
   const onPointerDown = (event:PointerEvent<HTMLDivElement>) => { if (event.pointerType === 'mouse' && event.button !== 0) return; drag.current={x:event.clientX,left:event.currentTarget.scrollLeft,active:true}; event.currentTarget.setPointerCapture(event.pointerId); };
   const onPointerMove = (event:PointerEvent<HTMLDivElement>) => { if (!drag.current.active || !viewport.current) return; viewport.current.scrollLeft=drag.current.left-(event.clientX-drag.current.x); };
   const onPointerUp = () => { drag.current.active=false; };
-  const move = (direction:number) => { const next=(active+direction+visible.length)%visible.length;setActive(next);viewport.current?.querySelectorAll<HTMLElement>('.visual-diary-card')[next]?.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'}); };
+  const move = (direction:number) => {
+  const next = (active + direction + visible.length) % visible.length;
+  setActive(next);
+  const card = viewport.current?.querySelectorAll<HTMLElement>('.visual-diary-card')[next];
+  if (card && viewport.current) {
+    viewport.current.scrollTo({
+      left: card.offsetLeft - (viewport.current.clientWidth - card.clientWidth) / 2,
+      behavior: 'smooth'
+    });
+  }
+};
   useEffect(() => { setActive(0);viewport.current?.scrollTo({left:0,behavior:'smooth'}); }, [filter]);
-  useEffect(() => { if(filter!=='All'||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;const timer=window.setInterval(()=>setActive(v=>{if(drag.current.active)return v;const next=(v+1)%visible.length;viewport.current?.querySelectorAll<HTMLElement>('.visual-diary-card')[next]?.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});return next;}),4200);return()=>window.clearInterval(timer); },[filter,visible.length]);
+  useEffect(() => { if(filter!=='All'||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;const timer=window.setInterval(()=>setActive(v=>{if(drag.current.active)return v;const next=(v+1)%visible.length;const card = viewport.current?.querySelectorAll<HTMLElement>('.visual-diary-card')[next];
+if (card && viewport.current) {
+  viewport.current.scrollTo({
+    left: card.offsetLeft - (viewport.current.clientWidth - card.clientWidth) / 2,
+    behavior: 'smooth'
+  });
+}return next;}),4200);return()=>window.clearInterval(timer); },[filter,visible.length]);
   return <section className="visual-diary-section" aria-labelledby="visual-diary-title">
     <div className="visual-diary-backdrop" aria-hidden="true"/>
     <div className="visual-diary-panel">
