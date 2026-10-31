@@ -78,24 +78,6 @@ function Home() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [showShortcuts, setShowShortcuts] = useState(false);
   const [copied, setCopied] = useState(false);
-  
-const copyCurrentPage = async () => {
-  try {
-    await navigator.clipboard.writeText(window.location.href);
-    setCopied(true);
-    window.setTimeout(() => setCopied(false), 1800);
-  } catch {
-    setCopied(false);
-  }
-};
-
-const goToTop = () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-};
-
-const goToSection = (id: string) => {
-  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-};
   const unlockRef = useDragScroll<HTMLDivElement>();
   const goCapability = (i: number) => { const n=Math.max(0,Math.min(unlocks.length-1,i));setActiveCapability(n);unlockRef.current?.querySelectorAll<HTMLElement>('.unlock-card')[n]?.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'}); };
   useEffect(()=>{const update=()=>{const max=document.documentElement.scrollHeight-window.innerHeight;setScrollProgress(max>0?window.scrollY/max*100:0)};window.addEventListener('scroll',update,{passive:true});update();return()=>window.removeEventListener('scroll',update)},[]);
@@ -106,99 +88,7 @@ const goToSection = (id: string) => {
 
   return (
     <>
-      <div className="qf-floating-tools">
-  <button
-    type="button"
-    onClick={() => setShowShortcuts(v => !v)}
-    aria-label="Open help and quick navigation"
-    aria-expanded={showShortcuts}
-    title="Help and quick navigation"
-  >
-    ?
-  </button>
-
-  <button
-    type="button"
-    onClick={goToTop}
-    aria-label="Scroll to top"
-    title="Back to top"
-  >
-    ↑
-  </button>
-</div>
-
-{showShortcuts && (
-  <div className="qf-shortcuts" role="dialog" aria-modal="false" aria-label="QuadraFroyn help and navigation">
-    <button
-      type="button"
-      className="qf-help-close"
-      onClick={() => setShowShortcuts(false)}
-      aria-label="Close help panel"
-    >
-      ×
-    </button>
-
-    <span className="qf-help-eyebrow">QUADRAFROYN ASSISTANT</span>
-    <h3>Explore with ease.</h3>
-    <p className="qf-help-description">
-      Find pages, explore services and navigate the entire website from one place.
-    </p>
-
-    <label className="qf-help-search">
-      <span>Search this website</span>
-      <input
-        type="search"
-        value={helpSearch}
-        onChange={e => setHelpSearch(e.target.value)}
-        placeholder="Search services, products, pages..."
-        aria-label="Search website pages"
-      />
-    </label>
-
-    <div className="qf-help-links">
-      {filteredHelpLinks.length > 0 ? (
-        filteredHelpLinks.map(item => (
-          <Link
-            key={item.path}
-            to={item.path}
-            onClick={() => {
-              setShowShortcuts(false);
-              setHelpSearch('');
-            }}
-            className="qf-help-link"
-          >
-            <span>
-              <strong>{item.label}</strong>
-              <small>{item.detail}</small>
-            </span>
-            <span aria-hidden="true">↗</span>
-          </Link>
-        ))
-      ) : (
-        <p className="qf-help-empty">No matching pages found. Try another search.</p>
-      )}
-    </div>
-
-    <div className="qf-help-actions">
-      <button type="button" onClick={copyCurrentPage}>
-        {copied ? '✓ Link copied' : '↗ Copy current page link'}
-      </button>
-
-      <a href="mailto:quadrafroyn@gmail.com">
-        ✉ Email support
-      </a>
-
-      <button type="button" onClick={() => goToSection('home')}>
-        ↑ Back to homepage
-      </button>
-    </div>
-
-    <div className="qf-help-shortcuts">
-      <span><kbd>?</kbd> Toggle help</span>
-      <span><kbd>Esc</kbd> Close panel</span>
-    </div>
-  </div>
-)}
+      <div className="qf-floating-tools"><button type="button" onClick={()=>setShowShortcuts(v=>!v)} aria-label="Keyboard shortcuts" aria-expanded={showShortcuts}>?</button><button onClick={async()=>{try{await navigator.clipboard.writeText(window.location.href);setCopied(true);setTimeout(()=>setCopied(false),1800)}catch{}}} aria-label="Copy page link">{copied?'✓':'↗'}</button></div>
       {showShortcuts&&<div className="qf-shortcuts" role="dialog" aria-label="Keyboard shortcuts"><button onClick={()=>setShowShortcuts(false)} aria-label="Close shortcuts">×</button><h3>Explore with ease.</h3><p><kbd>?</kbd> Open or close this help panel</p><p><kbd>Esc</kbd> Close this panel</p><p>Use the service showcases and page links to explore QuadraFroyn.</p></div>}
       {/* Hero */}
       <section className="hero-showcase" id="home">
