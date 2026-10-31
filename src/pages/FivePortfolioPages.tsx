@@ -81,11 +81,76 @@ function ServerPage() {
 
 function CareerPage() {
   const stages: { id:string; number:string; title:string; kicker:string; image:string; alt:string; intro:string; topics:[string,string][]; outcome:string }[] = [
-    { id:'class-10', number:'01', title:'Career Guidance for Class 10 Students', kicker:'CHOOSE YOUR NEXT LEARNING PATH', image:'/images/career-guidance/career-program-1.jpeg', alt:'Students attending a career and learning awareness session', intro:'Class 10 is an important point to pause, understand what interests you, and compare the learning routes available after school. We help students and families explore options without rushing into a decision.', topics:[['Choose an academic stream','Compare Science, Commerce, and Arts / Humanities in relation to interests, learning preferences, and longer-term possibilities.'],['Understand strengths and interests','Reflect on subjects you enjoy, skills you are developing, and the kinds of problems you like solving.'],['Select suitable subjects','Review subject combinations and prerequisites that may matter for future courses.'],['Explore diploma and vocational routes','Learn about practical, technical, and skill-based pathways alongside higher-secondary study.'],['Look ahead at career possibilities','Build awareness of broad fields and the different education routes that can lead into them.']], outcome:'A clearer shortlist of next-step options and the questions to discuss before choosing a stream.' },
-    { id:'class-11', number:'02', title:'Career Guidance for Class 11 Students', kicker:'CONNECT SUBJECTS TO POSSIBILITIES', image:'/images/career-guidance/career-program-2.jpeg', alt:'A classroom learning session with students exploring new topics', intro:'Class 11 is a useful time to connect the subjects you study with the courses, professional fields, and skills they can lead toward. We help students explore options while building a manageable academic plan.', topics:[['Review subject choices','Understand how your current subject combination connects with undergraduate courses and areas of work.'],['Explore related careers','Discover opportunities associated with Science, Commerce, and Humanities pathways, including interdisciplinary options.'],['Identify interests and strengths','Use reflection and guided exploration to recognise subjects and activities that motivate you.'],['Plan your academic year','Set realistic study goals, learning priorities, and small projects that deepen understanding.'],['Explore professional courses and entrance routes','Build awareness of relevant professional programmes and entrance examinations, including their broad preparation expectations.']], outcome:'A practical exploration plan linking current subjects, possible courses, and areas to investigate next.' },
-    { id:'class-12', number:'03', title:'Career Guidance for Class 12 Students', kicker:'MAKE THE SCHOOL-TO-COLLEGE TRANSITION', image:'/images/career-guidance/career-program-3.jpeg', alt:'Students participating in an educational guidance programme', intro:'Class 12 brings several decisions together: course, institution, entrance route, finances, and the kind of future you want to work toward. We help students organise these choices into a clear, research-based plan.', topics:[['Shortlist colleges and universities','Compare institutions using course fit, eligibility, location, learning environment, facilities, and verified admission information.'],['Choose an undergraduate course','Understand programme structures and compare degrees, diplomas, and integrated options related to your interests.'],['Understand entrance examinations','Identify relevant examinations, official schedules, eligibility criteria, and preparation resources.'],['Navigate admissions','Create an application checklist for documents, deadlines, counselling steps, and official admission portals.'],['Explore scholarships and affordability','Learn where to find official scholarship information, eligibility requirements, and financial-aid timelines.'],['Plan beyond graduation','Explore professional qualifications, higher education, specialisations, and possible career directions after a degree.']], outcome:'A course-and-institution shortlist with an organised admissions, examination, and scholarship research checklist.' },
-    { id:'college', number:'04', title:'Career Guidance for College Students', kicker:'TURN LEARNING INTO PROFESSIONAL READINESS', image:'/images/career-guidance/career-program-4.jpeg', alt:'Students taking part in a group learning and career awareness session', intro:'College is the time to connect classroom learning with practical experience. We help students understand different roles, build evidence of their skills, and prepare for internships, entry-level opportunities, or further study.', topics:[['Find career direction','Explore technical and non-technical roles, industries, and the skills commonly associated with them.'],['Build relevant skills','Identify learning priorities and practical projects that strengthen subject knowledge and transferable skills.'],['Prepare for internships','Understand internship formats, application timelines, role descriptions, and professional expectations.'],['Create a resume and portfolio','Organise projects, coursework, achievements, and experience into a clear, honest professional profile.'],['Practise interviews','Prepare concise examples, communicate project contributions, and become familiar with common interview formats.'],['Explore industry and higher study','Build awareness of industry trends, specialisations, postgraduate study, and professional certifications.']], outcome:'A personal readiness plan covering skills, portfolio evidence, internship exploration, and next career steps.' },
-  ];
+    {
+  id: 'class-10',
+  number: '01',
+  title: 'Career Guidance for Class 10 Students',
+  kicker: 'CHOOSE YOUR NEXT LEARNING PATH',
+  image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1400&q=85',
+  alt: 'School students learning together in a classroom',
+  intro: 'Class 10 is an important point to pause, understand what interests you, and compare the learning routes available after school. We help students and families explore options without rushing into a decision.',
+  topics: [
+    ['Choose an academic stream','Compare Science, Commerce, and Arts / Humanities in relation to interests, learning preferences, and longer-term possibilities.'],
+    ['Understand strengths and interests','Reflect on subjects you enjoy, skills you are developing, and the kinds of problems you like solving.'],
+    ['Select suitable subjects','Review subject combinations and prerequisites that may matter for future courses.'],
+    ['Explore diploma and vocational routes','Learn about practical, technical, and skill-based pathways alongside higher-secondary study.'],
+    ['Look ahead at career possibilities','Build awareness of broad fields and the different education routes that can lead into them.']
+  ],
+  outcome: 'A clearer shortlist of next-step options and the questions to discuss before choosing a stream.'
+},
+{
+  id: 'class-11',
+  number: '02',
+  title: 'Career Guidance for Class 11 Students',
+  kicker: 'CONNECT SUBJECTS TO POSSIBILITIES',
+  image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=85',
+  alt: 'Students collaborating on academic work and group study',
+  intro: 'Class 11 is a useful time to connect the subjects you study with the courses, professional fields, and skills they can lead toward. We help students explore options while building a manageable academic plan.',
+  topics: [
+    ['Review subject choices','Understand how your current subject combination connects with undergraduate courses and areas of work.'],
+    ['Explore related careers','Discover opportunities associated with Science, Commerce, and Humanities pathways, including interdisciplinary options.'],
+    ['Identify interests and strengths','Use reflection and guided exploration to recognise subjects and activities that motivate you.'],
+    ['Plan your academic year','Set realistic study goals, learning priorities, and small projects that deepen understanding.'],
+    ['Explore professional courses and entrance routes','Build awareness of relevant professional programmes and entrance examinations, including their broad preparation expectations.']
+  ],
+  outcome: 'A practical exploration plan linking current subjects, possible courses, and areas to investigate next.'
+},
+{
+  id: 'class-12',
+  number: '03',
+  title: 'Career Guidance for Class 12 Students',
+  kicker: 'MAKE THE SCHOOL-TO-COLLEGE TRANSITION',
+  image: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1400&q=85',
+  alt: 'Students celebrating an academic milestone and graduation',
+  intro: 'Class 12 brings several decisions together: course, institution, entrance route, finances, and the kind of future you want to work toward. We help students organise these choices into a clear, research-based plan.',
+  topics: [
+    ['Shortlist colleges and universities','Compare institutions using course fit, eligibility, location, learning environment, facilities, and verified admission information.'],
+    ['Choose an undergraduate course','Understand programme structures and compare degrees, diplomas, and integrated options related to your interests.'],
+    ['Understand entrance examinations','Identify relevant examinations, official schedules, eligibility criteria, and preparation resources.'],
+    ['Navigate admissions','Create an application checklist for documents, deadlines, counselling steps, and official admission portals.'],
+    ['Explore scholarships and affordability','Learn where to find official scholarship information, eligibility requirements, and financial-aid timelines.'],
+    ['Plan beyond graduation','Explore professional qualifications, higher education, specialisations, and possible career directions after a degree.']
+  ],
+  outcome: 'A course-and-institution shortlist with an organised admissions, examination, and scholarship research checklist.'
+},
+{
+  id: 'college',
+  number: '04',
+  title: 'Career Guidance for College Students',
+  kicker: 'TURN LEARNING INTO PROFESSIONAL READINESS',
+  image: 'https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1400&q=85',
+  alt: 'College students collaborating and learning together',
+  intro: 'College is the time to connect classroom learning with practical experience. We help students understand different roles, build evidence of their skills, and prepare for internships, entry-level opportunities, or further study.',
+  topics: [
+    ['Find career direction','Explore technical and non-technical roles, industries, and the skills commonly associated with them.'],
+    ['Build relevant skills','Identify learning priorities and practical projects that strengthen subject knowledge and transferable skills.'],
+    ['Prepare for internships','Understand internship formats, application timelines, role descriptions, and professional expectations.'],
+    ['Create a resume and portfolio','Organise projects, coursework, achievements, and experience into a clear, honest professional profile.'],
+    ['Practise interviews','Prepare concise examples, communicate project contributions, and become familiar with common interview formats.'],
+    ['Explore industry and higher study','Build awareness of industry trends, specialisations, postgraduate study, and professional certifications.']
+  ],
+  outcome: 'A personal readiness plan covering skills, portfolio evidence, internship exploration, and next career steps.'
+}];
   const [activeStage, setActiveStage] = useState('class-10');
   return <div className="fp-page fp-career fp-career-redesign">
     <section className="fp-career-hero"><div className="fp-career-hero-copy"><Eyebrow>QUADRAFROYN / CAREER GUIDANCE</Eyebrow><h1>Make your next<br/>move with <em>clarity.</em></h1><p>Different stages call for different questions. Explore guidance designed for Class 10, Class 11, Class 12, and college students — with practical information for each step.</p><div className="fp-actions"><a className="fp-button fp-button-dark" href="#career-stages">Explore student pathways <ArrowDown size={16}/></a><Link className="fp-text-link" to="/contact">Talk with our team <ArrowUpRight size={16}/></Link></div><div className="fp-hero-index"><span>FOUR DISTINCT LEARNING STAGES</span><span>QF / YOUR NEXT CHAPTER</span></div></div><div className="fp-career-hero-art"><ImageFrame src="/images/career-guidance/career-program-1.jpeg" alt="Students gathered for an educational awareness programme"/><div className="fp-career-caption"><span>CAREER GUIDANCE</span><b>Explore before you decide.</b></div><span className="fp-career-vertical">LEARN / REFLECT / PLAN</span></div></section>
