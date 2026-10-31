@@ -83,6 +83,27 @@ function Home() {
   useEffect(()=>{const handler=(e:KeyboardEvent)=>{if((e.target as HTMLElement)?.closest('input,textarea,[contenteditable="true"]'))return;if(e.key==='Escape')setShowShortcuts(false);if(e.key==='?' )setShowShortcuts(v=>!v);};window.addEventListener('keydown',handler);return()=>window.removeEventListener('keydown',handler)},[]);
   useEffect(()=>{const el=unlockRef.current;if(!el)return;const update=()=>{const cards=[...el.querySelectorAll<HTMLElement>('.unlock-card')];const center=el.scrollLeft+el.clientWidth/2;let best=0,dist=Infinity;cards.forEach((c,i)=>{const d=Math.abs(c.offsetLeft+c.offsetWidth/2-center);if(d<dist){best=i;dist=d}});setActiveCapability(best)};el.addEventListener('scroll',update,{passive:true});return()=>el.removeEventListener('scroll',update)},[]);
   useEffect(()=>{if(motionPaused)return;const timer=window.setInterval(()=>{if(!document.hidden)setHeroSlide(c=>(c+1)%heroSlides.length)},5000);return()=>clearInterval(timer)},[motionPaused]);
+  useEffect(() => {
+  const handler = (e: KeyboardEvent) => {
+    if (
+      (e.target as HTMLElement)?.closest(
+        'input, textarea, [contenteditable="true"]'
+      )
+    ) return;
+
+    if (e.key === 'Escape') {
+      setShowShortcuts(false);
+    }
+
+    if (e.key === '?') {
+      setShowShortcuts(v => !v);
+    }
+  };
+
+  window.addEventListener('keydown', handler);
+
+  return () => window.removeEventListener('keydown', handler);
+}, []);
   const unlockRef = useDragScroll<HTMLDivElement>();
   const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
@@ -105,6 +126,46 @@ function Home() {
               <span>01 — 06</span>
             </div>
           </div>
+          <div className="qf-floating-tools">
+  <button
+    type="button"
+    onClick={() => setShowShortcuts(v => !v)}
+    aria-label="Keyboard shortcuts"
+    aria-expanded={showShortcuts}
+  >
+    ?
+  </button>
+</div>
+
+{showShortcuts && (
+  <div
+    className="qf-shortcuts"
+    role="dialog"
+    aria-label="Keyboard shortcuts"
+  >
+    <button
+      type="button"
+      onClick={() => setShowShortcuts(false)}
+      aria-label="Close shortcuts"
+    >
+      ×
+    </button>
+
+    <h3>Explore with ease.</h3>
+
+    <p>
+      <kbd>?</kbd> Open or close this help panel
+    </p>
+
+    <p>
+      <kbd>Esc</kbd> Close this panel
+    </p>
+
+    <p>
+      Use the service showcases and page links to explore QuadraFroyn.
+    </p>
+  </div>
+)}
           <button className="hero-showcase-play" onClick={() => scrollTo('flywheel')}>
             <span className="hero-play-ring"><Play size={17} fill="currentColor" /></span>
             <strong>How we<br />work</strong>
