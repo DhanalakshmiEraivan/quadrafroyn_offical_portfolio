@@ -78,27 +78,7 @@ function Home() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [showShortcuts, setShowShortcuts] = useState(false);
   const [copied, setCopied] = useState(false);
-  const [helpSearch, setHelpSearch] = useState('');
-
-const helpLinks = [
-  { label: 'Home', path: '/', detail: 'Return to homepage' },
-  { label: 'Services', path: '/services', detail: 'Explore our services' },
-  { label: 'Solutions', path: '/solutions', detail: 'Explore business solutions' },
-  { label: 'Products', path: '/products', detail: 'Discover our products' },
-  { label: 'Our Work', path: '/work', detail: 'View projects and work' },
-  { label: 'Process', path: '/process', detail: 'Understand our process' },
-  { label: 'Documentation', path: '/documentation', detail: 'Technical resources' },
-  { label: 'Community', path: '/community', detail: 'Explore our community' },
-  { label: 'Careers', path: '/careers', detail: 'Explore career opportunities' },
-  { label: 'Internships', path: '/internships', detail: 'Explore internships' },
-  { label: 'Contact', path: '/contact', detail: 'Get in touch with us' },
-  { label: 'Support', path: '/support', detail: 'Get help and support' },
-];
-
-const filteredHelpLinks = helpLinks.filter(item =>
-  `${item.label} ${item.detail}`.toLowerCase().includes(helpSearch.toLowerCase())
-);
-
+  
 const copyCurrentPage = async () => {
   try {
     await navigator.clipboard.writeText(window.location.href);
