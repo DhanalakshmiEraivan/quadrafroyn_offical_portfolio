@@ -56,7 +56,7 @@ const internshipRoles = [
 const projectReferences = [
  { number:'01', name:'Digital product interfaces', type:'WEB EXPERIENCE', text:'Explore how thoughtful layouts, accessible components, and clear interactions come together.', image:'photo-1498050108023-c5249f4df085', tech:['React','UI systems','Accessibility'] },
  { number:'02', name:'Data-rich dashboards', type:'APPLICATION DESIGN', text:'See how complex information can become useful, understandable product experiences.', image:'photo-1551288049-bebda4e38f71', tech:['Data visualisation','Product thinking','Frontend'] },
- { number:'03', name:'Collaborative platforms', type:'SOFTWARE CONCEPT', text:'Learn the building blocks behind connected tools and collaborative digital workflows.', image:'photo-1521737711867-e3b97375f902',, tech:['Web apps','Workflow','Team collaboration'] },
+ { number:'03', name:'Collaborative platforms', type:'SOFTWARE CONCEPT', text:'Learn the building blocks behind connected tools and collaborative digital workflows.', image:'photo-1521737711867-e3b97375f902', tech:['Web apps','Workflow','Team collaboration'] },
 ];
 export function InternshipsPage(){
  useReveal(); useScrollToTop();
